@@ -9,7 +9,7 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
     
     http.createServer(function(request, response) {
         response.writeHead(200);
-        response.write("FISKEFILLET");
+        response.write("Der ændres!!");
         response.end();}).listen(port);
     
         console.log("Listeningon port " + port + "...");
