@@ -20,6 +20,7 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
         autoIndex: true,
         useUnifiedTopology: true
     });
+    
 
 // Middleware todo
 const express = require('express')
