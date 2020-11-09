@@ -14,13 +14,18 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
     
         console.log("Listeningon port " + port + "...");
 
+
+     
+/*
     {
         useNewUrlParser: true,
         useCreateIndex: true,
         autoIndex: true,
         useUnifiedTopology: true
-    });
-    
+    }});
+*/
+
+/*
 
 // Middleware todo
 const express = require('express')
@@ -39,3 +44,4 @@ app.use('/jokes', jokeRouter)
 
 app.listen(config.PORT, () => { console.log(`Server startet på ${config.PORT}`); })
 
+*/
