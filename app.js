@@ -57,11 +57,7 @@ const jokeRouter = require('./routes/jokes')
 app.use('/jokes', jokeRouter)
 */
 
-app.get('/', (req, res) => {
-    res.send("LOL")
-})
-
-app.get('/jokes', async (req, res) => {
+app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
     console.log(jokes.length)
     res.render('jokes',{jokes:jokes})
