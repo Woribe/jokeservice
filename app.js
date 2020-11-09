@@ -10,7 +10,7 @@ app.use(body.urlencoded({ extended: false }))
 const config = require('./config')
 const Joke = require('./models/jokes')
 
-const controller = require('../controllers/jokes')
+const controller = require('./controllers/jokes')
 
 let port = process.env.PORT || 8080
 
@@ -51,8 +51,9 @@ app.get('/', (req, res) => {
     res.send("LOL")
 })
 
-app.get('/jokes', (req, res) => {
+app.get('/jokes', async (req, res) => {
     const jokes = await controller.getJokes()
+    console.log(jokes.length)
     res.render('jokes',{jokes:jokes})
 })
 
