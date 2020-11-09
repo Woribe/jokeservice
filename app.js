@@ -35,7 +35,7 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
 
 
 //Dummy data
-//initJokes()
+// initJokes()
 function initJokes() {
     let testJoke = Joke({setup: "Hvad er forskellen på et maleri og jesus?", punchline: "Det kræver kun et søm at hænge et maleri op"})
     testJoke.save()
