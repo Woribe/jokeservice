@@ -35,8 +35,10 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
 
 
 //Dummy data
-// initJokes()
+
+initJokes()
 function initJokes() {
+    /*
     let testJoke = Joke({setup: "Hvad er forskellen på et maleri og jesus?", punchline: "Det kræver kun et søm at hænge et maleri op"})
     testJoke.save()
     testJoke = Joke({setup: "Hvad kalder man en jøde der rager i et askebæger?", punchline: "Slægtsforsker"})
@@ -45,6 +47,7 @@ function initJokes() {
     testJoke.save()
     testJoke = Joke({setup: "Hvad er klammere end en bunke med døde babies?", punchline: "Den levende babie i midten der spiser sig ud af bunken"})
     testJoke.save()
+    */
     console.log("Der er lagt data i local MongoDB");
 }
 
