@@ -12,7 +12,7 @@ http.createServer(function(request, response) {
         // MongoDB og Mongoose setup
 */
 
-
+/*
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
     {
@@ -21,6 +21,7 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
         autoIndex: true,
         useUnifiedTopology: true
     });
+    */
 
 
 
@@ -36,13 +37,17 @@ app.use(body.urlencoded({ extended: false }))
 const config = require('./config')
 
 // Routes
+/*
 const jokeRouter = require('./routes/jokes')
 app.use('/jokes', jokeRouter)
+*/
 
 app.get('/', (req, res) => {
-    res.render('newJoke')
+    res.send("LOL")
 })
 
 
-app.listen(port)
+app.listen(port, () => {
+    console.log('Serveren kører');
+})
 
