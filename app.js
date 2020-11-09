@@ -40,7 +40,7 @@ const jokeRouter = require('./routes/jokes')
 app.use('/jokes', jokeRouter)
 
 app.get('/', (req, res) => {
-    res.write("Det virker")
+    res.send("Det virker")
 })
 
 
