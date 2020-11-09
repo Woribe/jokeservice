@@ -1,4 +1,4 @@
-const Joke = require('../models/cat')
+const Joke = require('../models/jokes')
 
 exports.writeJoke = async function (setup, punchline) {
     const joke = Joke({
