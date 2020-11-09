@@ -25,7 +25,7 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
     }});
 */
 
-/*
+
 
 // Middleware todo
 const express = require('express')
@@ -42,6 +42,6 @@ const config = require('./config')
 const jokeRouter = require('./routes/jokes')
 app.use('/jokes', jokeRouter)
 
+
 app.listen(config.PORT, () => { console.log(`Server startet på ${config.PORT}`); })
 
-*/
