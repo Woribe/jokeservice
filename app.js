@@ -1,21 +1,3 @@
-let http = require("http")
-
-let port = process.env.PORT || 8080
-
-
-/*
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
-    {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        autoIndex: true,
-        useUnifiedTopology: true
-    });
-    */
-
-
-
 // Middleware todo
 const express = require('express')
 const app = express()
@@ -26,6 +8,36 @@ app.use(body.json())
 app.use(body.urlencoded({ extended: false }))
 
 const config = require('./config')
+const Joke = require('./models/jokes')
+
+let port = process.env.PORT || 8080
+
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise
+mongoose.connect(config.mongoDBHost, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    autoIndex: true,
+    useUnifiedTopology: true
+})
+
+/*
+mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
+    {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        autoIndex: true,
+        useUnifiedTopology: true
+    });
+    */
+
+
+//Dummy data
+let testJoke = Joke({setup: "Hvad er forskellen på et maleri og jesus?", punchline: "Det kræver kun et søm at hænge et maleri op"})
+testJoke.save()
+
+
+
 
 // Routes
 /*
