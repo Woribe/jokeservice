@@ -37,6 +37,13 @@ app.get('/', (req, res) => {
     res.send("LOL")
 })
 
+app.get('/jokes', (req, res) => {
+    res.render('jokes')
+})
+
+app.get('/newJoke', (req, res) => {
+    res.render('newJoke')
+})
 
 app.listen(port, () => {
     console.log('Serveren kører');
