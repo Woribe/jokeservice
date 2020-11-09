@@ -40,9 +40,9 @@ const jokeRouter = require('./routes/jokes')
 app.use('/jokes', jokeRouter)
 
 app.get('/', (req, res) => {
-    res.send("Det virker")
+    res.render('newJoke')
 })
 
 
-app.listen(port, () => { console.log(`Server startet på ${port}`); })
+app.listen(port)
 
