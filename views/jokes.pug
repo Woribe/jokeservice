@@ -3,8 +3,10 @@ html
         title Alle jokes
     body
         h1 Alle vores jokes
-        ul
-            each joke in jokes
-                li="Setup: " + joke.setup + " Punchline: " + joke.punchline
-        br
+        each joke in jokes
+            p=joke.setup 
+            p=joke.punchline
+            p='*BA DUM TSSS*'
+            br
+
         button(onclick="location.href='/newJoke'") Opret ny joke

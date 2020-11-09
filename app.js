@@ -66,8 +66,15 @@ app.get('/', async (req, res) => {
     res.render('jokes',{jokes:jokes})
 })
 
-app.get('/newJoke', (req, res) => {
+app.get('/newJoke',(req,res)=>{
     res.render('newJoke')
+})
+
+app.post('/newJoke', (req, res) => {
+    const setup = req.body.setup
+    const punchline = req.body.punchline
+    controller.writeJoke(setup,punchline)
+    res.redirect('/')
 })
 
 app.listen(port, () => {
