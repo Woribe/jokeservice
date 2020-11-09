@@ -10,6 +10,8 @@ app.use(body.urlencoded({ extended: false }))
 const config = require('./config')
 const Joke = require('./models/jokes')
 
+const controller = require('../controllers/jokes')
+
 let port = process.env.PORT || 8080
 
 const mongoose = require('mongoose');
@@ -60,7 +62,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/jokes', (req, res) => {
-    res.render('jokes')
+    const jokes = await controller.getJokes()
+    res.render('jokes',{jokes:jokes})
 })
 
 app.get('/newJoke', (req, res) => {

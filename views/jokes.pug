@@ -1,1 +1,8 @@
 html
+    head
+        title Alle jokes
+    body
+        h1 Alle vores jokes
+        ul
+            each joke in jokes
+                li="Setup: " + joke.setup + " Punchline: " + joke.punchline
