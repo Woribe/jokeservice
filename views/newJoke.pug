@@ -3,6 +3,14 @@ html
         title Opret ny joke
     body
         form(action='/create' method='post')
-            input(type='text' name='setup')'
-            input(type='text' name='punchline')
+            label(for="") Setup
+            br
+            input(type='text' name='setup' style="width:500px" placeholder='Du har ringet til selvmords-linjen')
+            br
+            br
+            label(for="") Punchline
+            br
+            input(type='text' name='punchline' style="width:500px" placeholder='Kan du lige blive hængende?')
+            br
+            br
             button(type='submit' name='opret') Opret joke
