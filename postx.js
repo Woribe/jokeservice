@@ -19,7 +19,7 @@ async function main(url) {
         let respons = await post(url,
             {
                 "name": "BabyJokes",
-                "address": "babyjokes.herokuapp.com",
+                "address": "babyjokes.heroku.com",
                 "secret": "dødebabyer123",
             }
         );
