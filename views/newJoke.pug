@@ -1,16 +1,12 @@
-html
-    head
-        title Opret ny joke
-    body
-        form(action='/newJoke' method='post')
-            label(for="") Setup
-            br
-            input(type='text' name='setup' style="width:500px" placeholder='Du har ringet til selvmords-linjen')
-            br
-            br
-            label(for="") Punchline
-            br
-            input(type='text' name='punchline' style="width:500px" placeholder='Kan du lige blive hængende?')
-            br
-            br
-            button(type='submit' name='opret') Opret joke
+form(action='/newJoke' method='post')
+    label(for="") Setup
+    br
+    input(type='text' name='setup' style="width:450px; background-color: #00ffff;" placeholder='Du har ringet til selvmords-linjen')
+    br
+    br
+    label(for="") Punchline
+    br
+    input(type='text' name='punchline' style="width:450px; background-color: #00ffff;" placeholder='Kan du lige blive hængende?')
+    br
+    br
+    button(type='submit' name='opret' style="background-color: #000fff;") Opret joke

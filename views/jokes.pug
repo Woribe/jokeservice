@@ -1,12 +1,19 @@
 html
     head
+        style
+            include ../styles/jokes.css
         title Alle jokes
     body
         h1 Alle vores jokes
-        each joke in jokes
-            p=joke.setup 
-            p=joke.punchline
-            p='*BA DUM TSSS*'
-            br
+        div.div1
+            div.item1
+                each joke in jokes
+                    p=joke.setup 
+                    p=joke.punchline
+                    p='*BA DUM TSSS*'
+                    br
 
-        button(onclick="location.href='/newJoke'") Opret ny joke
+            div.item2
+                include newJoke.pug
+            
+            div.item3
