@@ -18,9 +18,9 @@ async function main(url) {
     try {
         let respons = await post(url,
             {
-                "name": "Test",
-                "address": "http://test.dk",
-                "secret": "secret password",
+                "name": "BabyJokes",
+                "address": "babyjokes.herokuapp.com",
+                "secret": "dødebabyer123",
             }
         );
         console.log(respons);
