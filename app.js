@@ -13,7 +13,7 @@ const Joke = require('./models/jokes')
 const controller = require('./controllers/jokes')
 const apiC = require('./controllers/api')
 
-//const popup = require('popups');
+const popup = require('popups');
 
 let port = process.env.PORT || 8080
 
@@ -33,8 +33,6 @@ app.use('/api', apiRouter)
 app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
     const urls = await apiC.otherSitesName()
-    // console.log(req.body.dropdown.value);
-    // const dropdown = await apiC.othersjokes(req.body.dropdown.value)
     res.render('jokes', { jokes: jokes, urls: urls })
 })
 
@@ -46,18 +44,20 @@ app.post('/newJoke', (req, res) => {
     if (valider.test(setup) && valider.test(punchline)) {
         controller.writeJoke(setup, punchline)
     } else {
-        // popup.alert({
-        //   content: 'Niks makker'
-        //})
+        popup.alert({
+            content: 'Niks makker'
+        })
     }
     res.redirect('/')
 })
 
-// app.post('/dropdown', async (req, res) {
-//     const value = req.body.dropdown.value
-//     const jokes = apiC.othersjokes(value)
-//     res.redirect('/', { dropdown: jokes })
-// })
+app.post('/', async (req, res) => {
+    const value = req.body.dropdown
+    const jokes = await controller.getJokes()
+    const urls = await apiC.otherSitesName()
+    const dropdownjokes = await apiC.othersjokes(value)
+    res.render('jokes', { jokes: jokes, urls: urls, dropdownlist: dropdownjokes })
+})
 
 app.delete('/deleteJoke', (req, res) => {
 

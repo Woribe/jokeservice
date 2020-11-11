@@ -13,8 +13,13 @@ exports.otherJokes = async function (url) {
 }
 
 exports.othersjokes = async function (url) {
+    let result;
     try {
-        let result = await nodeFetch(url + '/api/jokes')
+        if (url.substring(url.length - 1) != '/')
+            result = await nodeFetch(url + '/api/jokes')
+        else {
+            result = await nodeFetch(url + 'api/jokes')
+        }
         let json = await result.json();
         return json;
     } catch (e) {
