@@ -1,5 +1,5 @@
 const express = require('express')
-const get = require('../controllers/joke_regstery')
+const jokeController = require('../controllers/joke_regstery')
 const nodeFetch = require('node-fetch')
 const router = express.Router()
 const controller = require('../controllers/jokes')
@@ -11,7 +11,7 @@ router.get('/jokes', async (req, res) => {
 })
 
 router.get('/othersites', async (req, res) => {
-    const services = await get.get()
+    const services = await jokeController.get()
     res.json(services)
 })
 

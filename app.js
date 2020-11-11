@@ -11,6 +11,9 @@ const config = require('./config')
 const Joke = require('./models/jokes')
 
 const controller = require('./controllers/jokes')
+const apiC = require('./controllers/api')
+
+// const popup = require('popups');
 
 let port = process.env.PORT || 8080
 
@@ -22,6 +25,7 @@ mongoose.connect(config.mongoDBHost, {
     autoIndex: true,
     useUnifiedTopology: true
 })
+
 
 /*
 mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
@@ -60,16 +64,21 @@ app.use('/api', apiRouter)
 
 app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
+    const urls = await apiC.otherSitesName()
     res.render('jokes', { jokes: jokes, urls: urls })
 })
+
+const valider = /[a-zA-Z0-9]+/
 
 app.post('/newJoke', (req, res) => {
     const setup = req.body.setup
     const punchline = req.body.punchline
-    if (setup.length > 0 && punchline.length > 0) {
+    if (valider.test(setup) && valider.test(punchline)) {
         controller.writeJoke(setup, punchline)
     } else {
-        //TO-DO
+        // popup.alert({
+        //     content: 'Niks makker'
+        // })
     }
     res.redirect('/')
 })
