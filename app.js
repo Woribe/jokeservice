@@ -12,6 +12,8 @@ const Joke = require('./models/jokes')
 
 const controller = require('./controllers/jokes')
 
+const popup = require('popups');
+
 let port = process.env.PORT || 8080
 
 const mongoose = require('mongoose');
@@ -63,13 +65,17 @@ app.get('/', async (req, res) => {
     res.render('jokes',{jokes:jokes})
 })
 
+const valider = /[a-zA-Z0-9]+/
+
 app.post('/newJoke', (req, res) => {
     const setup = req.body.setup
     const punchline = req.body.punchline
-    if(setup.length>0&&punchline.length>0){
+    if(valider.test(setup)&&valider.test(punchline)){
     controller.writeJoke(setup,punchline)
     } else {
-    //TO-DO
+        popup.alert({
+            content: 'Niks makker'
+        })
     }
     res.redirect('/')
 })
