@@ -3,7 +3,7 @@ const get = require('../controllers/joke_regstery')
 const nodeFetch = require('node-fetch')
 const router = express.Router()
 const controller = require('../controllers/jokes')
-const { json } = require('body-parser')
+const apiController = require('../controllers/api')
 
 router.get('/jokes', async (req, res) => {
     const jokes = await controller.getJokes()
@@ -17,8 +17,8 @@ router.get('/othersites', async (req, res) => {
 
 router.get('/otherjokes/:site', async (req, res) => {
     try {
-        let result = await nodeFetch('https://' + req.params.site + '.herokuapp.com/api/jokes')
-        res.json(await result.json())
+        let result = await apiController.otherJokes('https://' + req.params.site + '.herokuapp.com/api/jokes')
+        res.json(result)
     } catch (e) {
         console.log(e);
     }
