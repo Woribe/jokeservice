@@ -9,10 +9,11 @@ html
             div.setup
                 include newJoke.pug
             div.dropdown
-                label(for="") Vælg hjemmeside for at se jokes
-                select(name="dropdown" style="width: 100%")
-                    each url in urls
-                        option(value=url.address) #{url.name}
+                form(action='/dropdown' method='post')
+                    label(for="") Vælg hjemmeside for at se jokes
+                    select(name="dropdown" onchange='/dropdown' style="width: 100%")
+                     each url in urls
+                            option(value=url.address) #{url.name}
             div.item1
                 each joke in jokes
                     p=joke.setup
@@ -20,8 +21,8 @@ html
                     p='*BA DUM TSSS*'
                     br
             div.item2
-                    each joke in jokes
-                    p=joke.setup
-                    p=joke.punchline
-                    p='*BA DUM TSSS*'
-                    br
+                //- each joke in dropdown
+                //-     p=joke.setup
+                //-     p=joke.punchline
+                //-     p='*BA DUM TSSS*'
+                //-     br

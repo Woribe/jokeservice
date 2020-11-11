@@ -30,7 +30,6 @@ exports.otherSitesName = async function () {
 
         let names = []
         for (const address of result) {
-            console.log(address.address);
             names.push({ name: address.name, address: address.address })
         }
         return names

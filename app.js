@@ -33,6 +33,8 @@ app.use('/api', apiRouter)
 app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
     const urls = await apiC.otherSitesName()
+    // console.log(req.body.dropdown.value);
+    // const dropdown = await apiC.othersjokes(req.body.dropdown.value)
     res.render('jokes', { jokes: jokes, urls: urls })
 })
 
@@ -44,16 +46,24 @@ app.post('/newJoke', (req, res) => {
     if (valider.test(setup) && valider.test(punchline)) {
         controller.writeJoke(setup, punchline)
     } else {
-       // popup.alert({
-         //   content: 'Niks makker'
+        // popup.alert({
+        //   content: 'Niks makker'
         //})
     }
     res.redirect('/')
 })
 
+// app.post('/dropdown', async (req, res) {
+//     const value = req.body.dropdown.value
+//     const jokes = apiC.othersjokes(value)
+//     res.redirect('/', { dropdown: jokes })
+// })
+
 app.delete('/deleteJoke', (req, res) => {
-    
+
 })
+
+
 
 app.listen(port, () => {
     console.log('Serveren kører');
