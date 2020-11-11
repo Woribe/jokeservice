@@ -8,14 +8,15 @@ html
         div.div1
             div.setup
                 include newJoke.pug
+            div.dropdown
+                label(for="") Vælg hjemmeside for at se jokes
+                select(name="dropdown" style="width: 100%")
+                    each url in urls
+                        option(value=url) ${url}
             div.item1
                 each joke in jokes
                     p=joke.setup
                     p=joke.punchline
                     p='*BA DUM TSSS*'
                     br
-
-            div.dropdown
-                p Hej
-
             div.item2

@@ -60,16 +60,16 @@ app.use('/api', apiRouter)
 
 app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
-    res.render('jokes',{jokes:jokes})
+    res.render('jokes', { jokes: jokes, urls: urls })
 })
 
 app.post('/newJoke', (req, res) => {
     const setup = req.body.setup
     const punchline = req.body.punchline
-    if(setup.length>0&&punchline.length>0){
-    controller.writeJoke(setup,punchline)
+    if (setup.length > 0 && punchline.length > 0) {
+        controller.writeJoke(setup, punchline)
     } else {
-    //TO-DO
+        //TO-DO
     }
     res.redirect('/')
 })
@@ -77,4 +77,3 @@ app.post('/newJoke', (req, res) => {
 app.listen(port, () => {
     console.log('Serveren kører');
 })
-
