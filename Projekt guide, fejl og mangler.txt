@@ -10,4 +10,4 @@ Rødder:
 
 
 Fejl og mangler:
-Ingen vores program er perfekt
+Der kan ikke slettets eller updateresjokes i appen.

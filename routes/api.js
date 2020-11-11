@@ -24,4 +24,9 @@ router.get('/otherjokes/:site', async (req, res) => {
     }
 })
 
+function hvisJokes(url) {
+    
+    
+}
+
 module.exports = router
