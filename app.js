@@ -23,6 +23,11 @@ mongoose.connect(config.mongoDBHost, {
     useUnifiedTopology: true
 })
 
+const apiController = require('./controllers/api')
+async function name() {
+    console.log(await apiController.otherSitesName());
+} 
+name()
 
 /*
 mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
@@ -73,6 +78,10 @@ app.post('/newJoke', (req, res) => {
         //TO-DO
     }
     res.redirect('/')
+})
+
+app.delete('/deleteJoke', (req, res) => {
+    
 })
 
 app.listen(port, () => {

@@ -14,11 +14,12 @@ exports.otherJokes = async function(url) {
 
 exports.otherSitesName = async function() {
     try {
+        const reqex = /\/([a-zA-Z0-9-_]+)/g
         let result = await jokeController.get()
         
         let names = []
-        for (const adress of result) {
-            names.push(adress.name)
+        for (const address of result) {
+            names.push({name:address.name, address:reqex.exec(address.address)[1]})
         }
         
         return names
