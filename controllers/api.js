@@ -12,6 +12,18 @@ exports.otherJokes = async function(url) {
     
 }
 
+exports.othersjokes = async function (url) {
+    try {
+        let result = await nodeFetch(url + '/api/jokes')
+        let json = await result.json();
+        return json;
+    } catch (e) {
+        console.log(e);
+    }
+    
+    
+}
+
 exports.otherSitesName = async function() {
     try {
         const reqex = /\/([a-zA-Z0-9-_]+)/g
@@ -19,7 +31,8 @@ exports.otherSitesName = async function() {
         
         let names = []
         for (const address of result) {
-            names.push({name:address.name, address:reqex.exec(address.address)[1]})
+            console.log(address.address);
+            names.push({name:address.name, address:address.address})
         }
         
         return names

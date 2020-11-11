@@ -13,7 +13,7 @@ const Joke = require('./models/jokes')
 const controller = require('./controllers/jokes')
 const apiC = require('./controllers/api')
 
-const popup = require('popups');
+//const popup = require('popups');
 
 let port = process.env.PORT || 8080
 
@@ -44,9 +44,9 @@ app.post('/newJoke', (req, res) => {
     if (valider.test(setup) && valider.test(punchline)) {
         controller.writeJoke(setup, punchline)
     } else {
-        popup.alert({
-            content: 'Niks makker'
-        })
+       // popup.alert({
+         //   content: 'Niks makker'
+        //})
     }
     res.redirect('/')
 })
