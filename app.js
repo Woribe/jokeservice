@@ -62,7 +62,7 @@ app.use('/api', apiRouter)
 
 app.get('/', async (req, res) => {
     const jokes = await controller.getJokes()
-    res.render('jokes',{jokes:jokes})
+    res.render('jokes', { jokes: jokes, urls: urls })
 })
 
 const valider = /[a-zA-Z0-9]+/
@@ -83,4 +83,3 @@ app.post('/newJoke', (req, res) => {
 app.listen(port, () => {
     console.log('Serveren kører');
 })
-
