@@ -13,8 +13,6 @@ const Joke = require('./models/jokes')
 const controller = require('./controllers/jokes')
 const apiC = require('./controllers/api')
 
-const popup = require('popups');
-
 let port = process.env.PORT || 8080
 
 const mongoose = require('mongoose');
@@ -43,10 +41,6 @@ app.post('/newJoke', (req, res) => {
     const punchline = req.body.punchline
     if (valider.test(setup) && valider.test(punchline)) {
         controller.writeJoke(setup, punchline)
-    } else {
-        popup.alert({
-            content: 'Niks makker'
-        })
     }
     res.redirect('/')
 })
@@ -58,12 +52,6 @@ app.post('/', async (req, res) => {
     const dropdownjokes = await apiC.othersjokes(value)
     res.render('jokes', { jokes: jokes, urls: urls, dropdownlist: dropdownjokes })
 })
-
-app.delete('/deleteJoke', (req, res) => {
-
-})
-
-
 
 app.listen(port, () => {
     console.log('Serveren kører');
