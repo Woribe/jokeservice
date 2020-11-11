@@ -12,7 +12,7 @@ html
                 label(for="") Vælg hjemmeside for at se jokes
                 select(name="dropdown" style="width: 100%")
                     each url in urls
-                        option(value=url) ${url}
+                        option(value=url) #{url}
             div.item1
                 each joke in jokes
                     p=joke.setup
