@@ -6,14 +6,16 @@ html
     body
         h1 Alle vores jokes
         div.div1
+            div.setup
+                include newJoke.pug
             div.item1
                 each joke in jokes
-                    p=joke.setup 
+                    p=joke.setup
                     p=joke.punchline
                     p='*BA DUM TSSS*'
                     br
 
+            div.dropdown
+                p Hej
+
             div.item2
-                include newJoke.pug
-            
-            div.item3
