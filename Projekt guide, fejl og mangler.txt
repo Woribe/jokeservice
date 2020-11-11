@@ -1,0 +1,12 @@
+Rødder:
+/: er vores forside hvor du kan se vores jokes, skrive nye jokes og vælge og se andre gruppers jokes
+
+/jokes: Viser vores jokes i json format
+
+/othersites: viser alle gruppers databaser fra kajs "https://krdo-joke-registry.herokuapp.com/api/services"
+
+/othersites/site: skriv et navn på en database fra /othersites og se deres jokes i jsonformat
+
+
+
+Fejl og mangler:
