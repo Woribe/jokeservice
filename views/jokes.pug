@@ -14,7 +14,9 @@ html
                     select(name="dropdown" style="width: 100%")
                         each url in urls
                             option(value=url.address) #{url.name}
-                    input(type='submit' name='knap')
+                    br
+                    br
+                    button(type='submit' name='knap') Vælg
             div.item1
                 each joke in jokes
                     p=joke.setup

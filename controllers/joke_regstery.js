@@ -8,7 +8,7 @@ exports.get = async function() {
     return await respons.json();
 }
 
-exports.post = async function(url, objekt) {
+const post = async function(url, objekt) {
     const respons = await fetch(url, {
         method: "POST",
         body: JSON.stringify(objekt),
@@ -20,7 +20,7 @@ exports.post = async function(url, objekt) {
     return await respons.json();
 }
 
-exports.delete = async function(url, objekt) {
+const deLete =  async function(url, objekt) {
     let respons = await fetch(url, {
         method: "DELETE",
         body: JSON.stringify(objekt),
@@ -61,9 +61,9 @@ async function mainDelete(url) {
     try {
         let respons = await deLete(url,
             {
-                // "name": "Test",
-                "address": "http://test.dk",
-                "secret": "secret password",
+                "name": "BabyJokes",
+                "address": "babyjokes.herokuapp.com",
+                "secret": "dødebabyer123",
             }
         );
         console.log(respons);

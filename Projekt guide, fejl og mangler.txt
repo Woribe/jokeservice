@@ -1,13 +1,30 @@
-Rødder:
-/: er vores forside hvor du kan se vores jokes, skrive nye jokes og vælge og se andre gruppers jokes
+--- BabyJokes ---
 
-/jokes: Viser vores jokes i json format
-
-/othersites: viser alle gruppers databaser fra kajs "https://krdo-joke-registry.herokuapp.com/api/services"
-
-/othersites/site: skriv et navn på en database fra /othersites og se deres jokes i jsonformat
+URL til applikation: http://babyjokes.herokuapp.com/
+Lavet af Rune le Fevre, Rasmus Munksgaard Holm, Mikkel Malmros og Andreas Holm
 
 
+--- Beskrivelse ---
 
-Fejl og mangler:
-Der kan ikke slettets eller updateresjokes i appen.
+Applikationen er lavet i de smukkeste farver.
+I venstre side ses jokes far vores egen mongoDB
+I højre side kan man vælge en anden service fra joke-registry. Når man trykker "vælg" skrives alle jokes neden under.
+
+
+--- Rødder ---
+
+/ : er vores forside hvor du kan se vores jokes, skrive nye jokes og vælge og se andre gruppers jokes
+
+/jokes : Viser vores jokes i json format
+
+/othersites : viser alle gruppers databaser fra kajs "https://krdo-joke-registry.herokuapp.com/api/services"
+
+/othersites/:site : skriv et navn på en database fra /othersites og se deres jokes i jsonformat
+
+
+--- Fejl og mangler ---
+
+- Der kan ikke slettets eller opdatere jokes i appen.
+- Servicen registeres ikke automatisk ved opstart af appen (ikke sikker på at det er en del af opgaven?)
+
+
